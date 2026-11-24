@@ -8,6 +8,15 @@ fun main() {
     val dvd = DVD("Inception", 8880, "Action", "2010-01-01") /*2h 28m*/
     val livre = Livre("1984", "George Orwell", "Gallimard", "1972-01-01")
 
+    // Ajout dans la biblio
+    bibliotheque.ajouter(magazine)
+    bibliotheque.ajouter(journal)
+    bibliotheque.ajouter(enregistrementAudio)
+    bibliotheque.ajouter(dvd)
+    bibliotheque.ajouter(livre)
+
+
+    //Test demandé
     bibliotheque.emprunter(dvd)
     bibliotheque.emprunter(livre)
     bibliotheque.consulter(magazine)
@@ -17,4 +26,9 @@ fun main() {
     bibliotheque.retourner(dvd)
     bibliotheque.retourner(livre)
     bibliotheque.afficherEmprunts()
+
+    //BONUS
+    bibliotheque.rechercheMedia("Le Monde")
+    bibliotheque.afficherLivreEmpruntables()
+    bibliotheque.statistiques()
 }

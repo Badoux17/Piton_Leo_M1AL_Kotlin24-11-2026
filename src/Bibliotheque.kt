@@ -1,3 +1,6 @@
+import javax.print.attribute.standard.JobHoldUntil
+import kotlin.reflect.typeOf
+
 class Bibliotheque(){
 
     private var collection = ArrayList<Media>()
@@ -24,8 +27,8 @@ class Bibliotheque(){
         }
     }
     fun afficherEmprunts(){
+        println("Emprunts en cours: ")
         for (media in emprunts) {
-            println("Emprunts en cours: ")
             media.afficher()
         }
     }
@@ -38,8 +41,8 @@ class Bibliotheque(){
         }
     }
     fun afficherLivreEmpruntables(){
+        println("Livre Non Emprunt en cours: ")
         for(media in collection){
-            println("Livre Non Emprunt en cours: ")
             if(media in emprunts){ }
             else{
                 media.afficher()
@@ -47,8 +50,49 @@ class Bibliotheque(){
         }
     }
     fun statistiques(){
+        val compteurs = mutableMapOf<String, Int>()
         for(media in collection){
-
+            if(media is Livre){
+                if (compteurs.containsKey("Livre")){
+                    compteurs["Livre"] = compteurs["Livre"]!! + 1
+                }
+                else{
+                    compteurs["Livre"] = 1
+                }
+            }
+            if(media is DVD){
+                if (compteurs.containsKey("DVD")){
+                    compteurs["DVD"] = compteurs["DVD"]!! + 1
+                }
+                else{
+                    compteurs["DVD"] = 1
+                }
+            }
+            if(media is Journal){
+                if (compteurs.containsKey("Journal")){
+                    compteurs["Journal"] = compteurs["Journal"]!! + 1
+                }
+                else{
+                    compteurs["Journal"] = 1
+                }
+            }
+            if(media is Magazine){
+                if (compteurs.containsKey("Magazine")){
+                    compteurs["Magazine"] = compteurs["Magazine"]!! + 1
+                }
+                else{
+                    compteurs["Magazine"] = 1
+                }
+            }
+            if(media is EnregistrementAudio){
+                if (compteurs.containsKey("EnregistrementAudio")){
+                    compteurs["EnregistrementAudio"] = compteurs["EnregistrementAudio"]!! + 1
+                }
+                else{
+                    compteurs["EnregistrementAudio"] = 1
+                }
+            }
         }
+        println(compteurs);
     }
 }
