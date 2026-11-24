@@ -13,6 +13,16 @@ Cela nous permettra donc de bien simuler une bibiliothèque.
 Les 8 fonctions sont: ajouter,emprunter,retourner,consulter,afficherEmprunts,rechercheMedia,afficherLivreEmpruntables et statistiques pour la classe Bibliothèque.
 Le reste des objets qui vont hériter de la méthode abstrait de Media (afficher()) et certain objets auront soient les fonctions emprunter&retourner (si ils ont hérité de l'interface Empruntable) ou la fonction consulter() (si ils ont hérité de l'interface Consultable).
 
-Construction en cours d'un menu interactif (bonus n°4).
+-> Le Menu interactif fonctionne bien !
+Plusieurs options dans un petit menu interactif : 
+1 -> Afficher les emprunts en cours (afficherEmprunts())
+2 -> Afficher les livres empruntables (afficherLivreEmpruntables())
+3 -> Emprunter un média (emprunter())
+4 -> Retourner un média (retourner())
+5 -> Consulter un média sur place (consulter())
+6 -> Affichage des Statistiques(statistiques())
+7 -> Sortie/Exit
+
+J'ai essayé d'apporter le plus de tests et de vérifications avant chaque action tout en gardant une bonne lisibilité du code, commentaires, et bonnes pratiques tout au long de mon project.
 
 Piton Léo M1AL.
