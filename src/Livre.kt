@@ -1,5 +1,6 @@
 import java.util.Date
 
+//Class Livre qui héritent de la classe abstrat Media et de l'interface Empruntable
 class Livre(titre : String,private var auteur : String, private var editeur : String,date : String) : Media(titre,date) , Empruntable{
 
     override fun emprunter() {

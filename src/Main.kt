@@ -1,6 +1,8 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
+
+    // Ajout des medias
     val bibliotheque = Bibliotheque()
     val magazine = Magazine("National Geographic", "2026-10-28", "10")
     val journal = Journal("Le Monde", "2026-10-28")

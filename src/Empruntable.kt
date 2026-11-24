@@ -1,4 +1,5 @@
-internal interface Empruntable {
+// Interface Empruntable
+interface Empruntable {
     fun emprunter()
     fun retourner()
 }

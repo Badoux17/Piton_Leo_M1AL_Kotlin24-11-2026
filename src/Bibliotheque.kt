@@ -1,6 +1,8 @@
 import javax.print.attribute.standard.JobHoldUntil
 import kotlin.reflect.typeOf
 
+
+// Class Bibliothèque avec un total de 9 fonctions chacune très utiles au bon fonctionnement du Menu Interactif
 class Bibliotheque(){
 
     private var collection = ArrayList<Media>()

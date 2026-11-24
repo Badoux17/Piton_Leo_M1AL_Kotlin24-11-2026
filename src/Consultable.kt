@@ -1,3 +1,5 @@
-internal interface Consultable {
+
+// Interface Consultable
+interface Consultable {
     fun consulter()
 }
