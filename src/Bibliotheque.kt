@@ -14,16 +14,26 @@ class Bibliotheque(){
             media.emprunter();
             emprunts.add(media)
         }
+        else{
+            println("-> ERREUR emprunt sur '${media.titre}'")
+        }
+
     }
     fun retourner(media: Media) {
         if(emprunts.contains(media) && media is Empruntable){
             media.retourner()
             emprunts.remove(media)
         }
+        else{
+            println("-> ERREUR retour sur '${media.titre}'")
+        }
     }
     fun consulter(media: Media) {
         if(media is Consultable) {
             media.consulter()
+        }
+        else{
+            println("-> ERREUR consultation sur '${media.titre}'")
         }
     }
     fun afficherEmprunts(){
@@ -38,6 +48,15 @@ class Bibliotheque(){
         }
         else{
             println("Le média '${titreR}' est bien dans la bibliothèque.")
+        }
+    }
+    fun retourMedia(titreR : String) : Media?{
+        var media = collection.find {it.titre.equals(titreR)};
+        if(media != null){
+            return media
+        }
+        else{
+            return null
         }
     }
     fun afficherLivreEmpruntables(){
@@ -95,4 +114,5 @@ class Bibliotheque(){
         }
         println(compteurs);
     }
+
 }

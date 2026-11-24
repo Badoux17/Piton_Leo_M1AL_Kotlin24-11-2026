@@ -28,7 +28,72 @@ fun main() {
     bibliotheque.afficherEmprunts()
 
     //BONUS
-    bibliotheque.rechercheMedia("Le Monde")
-    bibliotheque.afficherLivreEmpruntables()
-    bibliotheque.statistiques()
+
+    var applicationEnCours = true;
+
+    while (applicationEnCours) {
+        println("---------MENU---------")
+        println("1. Afficher les emprunts en cours")
+        println("2. Afficher les livres empruntables")
+        println("3. Emprunter un média")
+        println("4. Retourner un média")
+        println("5. Consulter un média sur place")
+        println("6. Statistiques")
+        println("7. Quitter")
+        print("Votre choix (1-7) : ")
+        val choix = readln()
+        when (choix) {
+            "1" -> {
+                bibliotheque.afficherEmprunts()
+            }
+            "2" -> {
+                bibliotheque.afficherLivreEmpruntables()
+            }
+            "3" -> {
+                print("Entrez le titre du média à emprunter : ")
+                val titre = readln()
+                val media = bibliotheque.retourMedia(titre)
+                if (media != null) {
+                    bibliotheque.emprunter(media);
+                    println("Le media '$titre' a été emprunté");
+                }
+                else{
+                    println("Impossible d'emprunter ce media il n'est pas dispo ou ne peut pas être emprunté");
+                }
+            }
+            "4" -> {
+                print("Entrez le titre du média à retourner :")
+                val titre = readln()
+                val media = bibliotheque.retourMedia(titre)
+                if (media != null) {
+                    bibliotheque.retourner(media)
+                    println("Le media '$titre' a été retourner");
+                }
+                else{
+                    println("Impossible d'emprunter ce media il n'est pas dispo ou ne peut pas être retourné");
+                }
+            }
+            "5" -> {
+                print("Entrez le titre du média à consulter :")
+                val titre = readln()
+                val media = bibliotheque.retourMedia(titre)
+                if (media != null) {
+                    bibliotheque.consulter(media)
+                }
+                else{
+                    println("Impossible d'emprunter ce media il n'est pas dispo ou ne peut pas être consulter");
+                }
+            }
+            "6" -> {
+                bibliotheque.statistiques()
+            }
+            "7" -> {
+                println("Au revoir !")
+                applicationEnCours = false
+            }
+            else -> {
+                println("Choix invalide. Veuillez taper un chiffre entre 1 et 7.")
+            }
+        }
+    }
 }
